@@ -9,7 +9,8 @@
 					<Bar>
 						
 						<contentMiddle>
-							<Title text="{i18n>supplierList}"></Title>
+                        <!-- {i18n>supplierList} -->
+							<Title text="Supplier List"></Title>
 						</contentMiddle>
                         <contentRight>
                             <ToggleButton icon="sap-icon://translate" enabled="true" pressed="true" press="onTranslateBtn" />
