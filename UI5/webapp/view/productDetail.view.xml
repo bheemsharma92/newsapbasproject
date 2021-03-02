@@ -10,7 +10,7 @@
 							<Button icon="sap-icon://nav-back" press="onNavBack" type="Emphasized" class="sapUiSizeCompact navBackBtn"/>
 						</contentLeft>
 						<contentMiddle>
-							<Title text="Product List"></Title>
+							<Title text="Product List 1"></Title>
 						</contentMiddle>
 					</Bar>
 				</customHeader>
