@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--groupItems="{filterModel>/groupItems}"-->
+	<ViewSettingsDialog title=" " confirm="handleConfirm" cancel="handleCancel" resetFilters="handleResetFilter" sortItems="{filterModel>/sortItems}"
+		filterItems="{filterModel>/filterItems}">
+		<sortItems >
+			<ViewSettingsItem text="{filterModel>name}" key="{filterModel>value}" selected="{filterModel>selected}"/>
+		</sortItems>
+		<filterItems>
+			<ViewSettingsFilterItem text="{filterModel>name}" key="{filterModel>key}" items="{path: 'filterModel>value', templateShareable:false}">
+				<items>
+					<ViewSettingsItem text="{filterModel>filKey}"/>
+				</items>
+			</ViewSettingsFilterItem>
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

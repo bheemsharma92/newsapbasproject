@@ -1,0 +1,5 @@
+{
+  "authenticationMethod": "none",
+  "welcomeFile":"nsUI5",
+  "routes": []
+}

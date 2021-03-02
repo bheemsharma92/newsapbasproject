@@ -1,0 +1,10 @@
+/node_modules/
+package-lock.json
+/dist/
+/.vscode/
+/*-content.zip/ 
+
+# auto generated wildcard
+demo/ui5/.env1
+# auto generated wildcard
+demoAuth/authModule/.env1

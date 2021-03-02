@@ -1,0 +1,71 @@
+<mvc:View controllerName="ns.UI5.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" class="headerBar">
+                <customHeader>
+					<Bar>
+						
+						<contentMiddle>
+							<Title text="{i18n>supplierList}"></Title>
+						</contentMiddle>
+                        <contentRight>
+                            <ToggleButton icon="sap-icon://translate" enabled="true" pressed="true" press="onTranslateBtn" />
+						</contentRight>
+					</Bar>
+				</customHeader>
+                    <content>
+                         <Table id="table" width="auto" items="{listModel>/items}" class="sapUiSizeCompact">
+                            <headerToolbar>
+                                <Toolbar >
+                                    <SearchField id="searchField" placeholder="{i18n>search}" liveChange="onListLiveSearch" width="100%"/>
+                                    <Button icon="sap-icon://excel-attachment" class="excelBtn" press="onExport" tooltip="{i18n>exportData}"/>
+                                    <Button class="sapUiTinyMarginBegin emphasizedBtn" type="Emphasized" icon="sap-icon://filter" press="handleOpenDialog"/>
+                                </Toolbar>
+                            </headerToolbar>
+                            <infoToolbar >
+                                <Toolbar class="infoToolBarClass">
+                                    <Label text="Total {listModel>/dataLength} items" class="infoLabel"/>
+                                </Toolbar>
+                            </infoToolbar>
+                            <columns>
+                                <Column id="col_prodId" >
+                                    <Text id="nameColumnTitle" text="{i18n>supId}" class="headerClass"/>
+                                </Column>
+                                <Column id="col_prodName" demandPopin="true" minScreenWidth="Phone">
+                                    <Text text="{i18n>supName}" class="headerClass"/>
+                                </Column>
+                                <Column id="col_Category" hAlign="Right" demandPopin="true" minScreenWidth="Phone">
+                                    <Text text="{i18n>supRating}" class="headerClass"/>
+                                </Column>
+                                <Column id="col_price" demandPopin="true" minScreenWidth="Tablet" hAlign="Right">
+                                    <Text text="{i18n>Country}" class="headerClass"/>
+                                </Column>
+                                <Column id="col_price1" demandPopin="true" minScreenWidth="Tablet" hAlign="Right">
+                                    <Text text="{i18n>lastpodate}" class="headerClass"/>
+                                </Column>
+                                <Column id="col_price2" demandPopin="true" minScreenWidth="Tablet" hAlign="Right">
+                                    <Text text="{i18n>totalPurchaseAmt}" class="headerClass"/>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem press="onItemPress" type="Navigation">
+                                    <cells>
+                                        <ObjectIdentifier title="{listModel>SupplierID}"/>
+                                        <Text text = "{listModel>SupplierName}"/>
+                                        <RatingIndicator id="RI_default" maxValue="5" editable="false" value="{listModel>SupplierRating}" />
+                                        <Text text="{listModel>Country}"></Text>
+                                        <Text text="{listModel>LastPODate}"></Text>
+                                        <ObjectNumber number="{listModel>TotalPurchaseAmount}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table> 
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

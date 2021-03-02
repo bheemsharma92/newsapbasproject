@@ -1,0 +1,53 @@
+<mvc:View controllerName="ns.UI5.controller.productDetail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+        <App id="app">
+            <pages>
+                <Page id="page"  class="headerBar ">
+                <customHeader>
+					<Bar>
+						<contentLeft>
+							<Button icon="sap-icon://nav-back" press="onNavBack" type="Emphasized" class="sapUiSizeCompact navBackBtn"/>
+						</contentLeft>
+						<contentMiddle>
+							<Title text="Product List"></Title>
+						</contentMiddle>
+					</Bar>
+				</customHeader>
+                    <content>
+                        <ObjectHeader binding="{listModel>/selectedItem}" title="{listModel>SupplierName}" number="{listModel>LastPODate}" class="headerNumberFld">
+                            <statuses>
+                                <ObjectStatus text="{listModel>TotalPurchaseAmount}"/>
+                                <!-- <ObjectStatus text="In Stock" state="Success" /> --></statuses>
+                            <ObjectAttribute text="Supplier ID: {listModel>SupplierID}" />
+                            <ObjectAttribute text="Country: {listModel>Country}" />
+                            <!-- <ObjectAttribute text="{Description}" /><ObjectAttribute text="www.sap.com" active="true" press="handleLinkObjectAttributePress" /> --></ObjectHeader>
+                        <List id="productList" items="{ path : 'listModel>/selectedItem/PODetails', sorter : { path : 'POItem' } }" growing="true" growingThreshold="100" growingScrollToLoad="false">
+                            <headerToolbar >
+                                <Toolbar class="sapUiSizeCompact">
+                                    <!-- <Title text="Products" level="H2" /> -->
+                                    <ToolbarSpacer />
+                                    <SearchField   id="searchField" liveChange="onListLiveSearch" width="auto"/>
+                                <Button class="sapUiTinyMarginBegin emphasizedBtn" type="Emphasized" icon="sap-icon://filter" press="handleOpenDialog"/>
+                                </Toolbar>
+                            </headerToolbar>
+                            <infoToolbar>
+                                <Toolbar class="infoToolBarClass">
+                                    <Label text="Total {listModel>/selectedPoListLength} items" class="infoLabel"/>
+                                </Toolbar>
+                            </infoToolbar>
+                            <ObjectListItem class="objListItem" title="{listModel>POItem}" number="{listModel>RequestedDeliveryDate}" highlight="{path: 'listModel>Status',formatter: '.formatter.statusText'}" type="Active" press="onListPress">
+                                <firstStatus>
+                                    <ObjectStatus text="{listModel>ItemAmount}{listModel>Currency}" />
+                                </firstStatus>
+                                <attributes>
+                                    <ObjectAttribute text="Product: {listModel>Product}"/>
+                                    <ObjectAttribute text="PODate: {listModel>PODate}"/>
+                                </attributes>
+                            </ObjectListItem>
+                        </List>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+</mvc:View>

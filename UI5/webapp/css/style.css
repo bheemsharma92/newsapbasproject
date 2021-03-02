@@ -1,0 +1,54 @@
+
+/* to change font size of number field in object header */
+.headerNumberFld>div>div>.sapMOHNumberDiv .sapMObjectNumberText {
+    font-size: 1.125rem !important;
+}
+/* to change font size of number field in objectlist item */
+.objListItem>div>div>.sapMObjLNumberDiv .sapMObjectNumber .sapMObjectNumberText {
+    font-size: 1.125rem !important;
+}
+/* to adjust padding around object header in product list page */
+.headerNumberFld>div{
+    padding:0rem 0.5rem 0rem 0.5rem !important;
+}
+/* to remove shell bar */
+.sapMShellBrandingBar {
+    background-color: transparent;
+}
+/* to change header background color */
+.headerBar>header>.sapMIBar.sapMHeader-CTX {
+    background-color: #89CFF0;
+}
+/* to change header title font color */
+.headerBar>header>div>div>div>div {
+    color: black !important;
+    text-shadow: none !important;
+}
+/* to change info tool bar btn color */
+.infoToolBarClass.sapMTB-Info-CTX.sapMTB {
+    background: #002C99;
+    color: #fff;
+}
+/* for emphasized btn blue color */
+.emphasizedBtn>span.sapMBtnInner.sapMBtnEmphasized {
+    background-color: #002C99;
+    border-color: #002C99;
+}
+
+/* for nav back button */
+.navBackBtn>span.sapMBtnInner.sapMBtnEmphasized {
+    background-color: transparent;
+    border-color: transparent;
+}
+.navBackBtn>span.sapMBtnInner.sapMBtnEmphasized .sapUiIcon {
+    color: black !important;
+    text-shadow: none;
+}
+/* for excel Button */
+.excelBtn>span>span {
+    color: #002C99 !important;
+}
+/* for list item select color */
+.sapMLIB.sapMLIBActive{
+	background: #002C99;
+}
